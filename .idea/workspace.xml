@@ -136,7 +136,7 @@
             <entry file="file://$PROJECT_DIR$/Procfile">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="13">
-                  <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+                  <caret line="1" selection-start-line="1" selection-end-line="1" />
                 </state>
               </provider>
             </entry>
@@ -161,7 +161,7 @@
             <entry file="file://$PROJECT_DIR$/Pipfile">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="416">
-                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+                  <caret line="32" selection-start-line="32" selection-end-line="32" />
                 </state>
               </provider>
             </entry>
@@ -427,13 +427,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://29ad4550-3f4f-4004-b744-ae0ecfa7f9f1/schema/main/table/api_handler_company">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://29ad4550-3f4f-4004-b744-ae0ecfa7f9f1/schema/main/table/api_handler_platformuser">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -780,14 +773,17 @@
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipfile.lock">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Pipfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
