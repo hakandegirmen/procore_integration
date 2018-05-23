@@ -32,8 +32,6 @@ class Procore:
         path = '/oauth/authorize?response_type=code&client_id=' + self.client_id + '&redirect_uri=' + self.api_server_uri + '/platform_users/receive_authorization/&state=' + user_uuid
         url = self.base_url + path
 
-        print(url)
-
         return url
 
     def get_access_token(self, authorization_code):

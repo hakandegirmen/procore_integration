@@ -27,8 +27,8 @@ class PlatformUser(models.Model):
     # procore attributes
     procore_user_id = models.CharField(max_length=20, null=True)
 
-    access_token = models.CharField(max_length=200, null=True)
-    refresh_token = models.CharField(max_length=200, null=True)
+    access_token = models.CharField(max_length=500, null=True)
+    refresh_token = models.CharField(max_length=500, null=True)
     access_token_expires_in = models.IntegerField(null=True)
     access_token_created_at = models.IntegerField(null=True)
 
