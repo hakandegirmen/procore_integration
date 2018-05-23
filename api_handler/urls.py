@@ -11,6 +11,7 @@ router.register(r'companies', views.CompanyViewSet, base_name='companies')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^webhook/', views.webhook),
 ]
 
 # urlpatterns += format_suffix_patterns([url(r'^api-auth/', include('rest_framework.urls'))])

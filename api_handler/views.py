@@ -174,8 +174,11 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
 
 
-
-
+@action(detail=True, methods=['post','get'])
+def webhook(request):
+    return Response(status=status.HTTP_200_OK)
+    data = request.data
+    print()
 
 
 
