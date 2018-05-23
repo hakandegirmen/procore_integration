@@ -29,7 +29,7 @@ class Procore:
 
     def get_authorization_url(self, user_uuid):
         # TODO: find another way to get user uuid (or another identifier)
-        path = '/oauth/authorize?response_type=code&client_id=' + self.client_id + '&redirect_uri=http://' + self.api_server_uri + '/platform_users/receive_authorization/&state=' + user_uuid
+        path = '/oauth/authorize?response_type=code&client_id=' + self.client_id + '&redirect_uri=' + self.api_server_uri + '/platform_users/receive_authorization/&state=' + user_uuid
         url = self.base_url + path
 
         print(url)
