@@ -5,6 +5,7 @@ import time
 from django.http import HttpResponse, HttpResponseRedirect
 from rest_framework import status
 from rest_framework.response import Response
+import os
 
 
 class Procore:
@@ -18,11 +19,11 @@ class Procore:
     client_id = 'fe61a88b5b137142c87f8a347228a413a7e5e931fc786c071457e7a6bb239acc'
     client_secret = 'f5b4d12d53d1fa699933e8967f07262a586724e2c3ca6a19234f97c9656317e2'
 
-    # environment = 'local'
-    environment = 'heroku'
+
+    environment = os.environ.get('PLATFORM', 'local')
 
     api_server_uris = {'local': 'http://127.0.0.1:8002',
-                       'heroku': 'https://mighty-beach-77445.herokuapp.com'}
+                       'heroku': 'https://procore-integration-1.herokuapp.com'}
 
     api_server_uri = api_server_uris[environment]
 
