@@ -23,7 +23,7 @@ virtualenv = "==16.0.0"
 virtualenv-clone = "==0.3.0"
 Django = "==2.0.5"
 Pygments = "==2.2.0"
-
+gunicorn = "*"
 django-heroku = "*"
 
 [dev-packages]
