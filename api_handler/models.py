@@ -10,12 +10,32 @@ class Company(models.Model):
     uuid = models.UUIDField(unique=True)
     name = models.CharField(max_length=64, null=True)
 
-    # procore attributes
+    # procore properties
     procore_company_id = models.CharField(max_length=20, null=True)
 
 
     def __str__(self):
         return str(self.name)
+
+
+
+class Project(models.Model):
+    class Meta:
+        verbose_name_plural = 'Projects'
+
+    uuid = models.UUIDField(unique=True)
+    name = models.CharField(max_length=64, null=True)
+    active = models.BooleanField(default=True)
+
+    # procore properties
+    procore_project_id = models.CharField(max_length=20)
+
+    # foreign keys
+    company = models.ForeignKey(Company, related_name='projects', on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return str(self.name)
+
 
 class PlatformUser(models.Model):
     class Meta:
@@ -24,7 +44,7 @@ class PlatformUser(models.Model):
     uuid = models.UUIDField(unique=True)
     name = models.CharField(max_length=64, null=True)
 
-    # procore attributes
+    # procore properties
     procore_user_id = models.CharField(max_length=20, null=True)
 
     access_token = models.CharField(max_length=500, null=True)
@@ -34,22 +54,7 @@ class PlatformUser(models.Model):
 
     # foreign keys
     company = models.ForeignKey(Company, related_name='platformusers', on_delete=models.CASCADE, null=True)
-
-    def __str__(self):
-        return str(self.name)
-
-class Project(models.Model):
-    class Meta:
-        verbose_name_plural = 'Projects'
-
-    uuid = models.UUIDField(unique=True)
-    name = models.CharField(max_length=64, null=True)
-
-    # procore attributes
-    procore_project_id = models.CharField(max_length=20)
-
-    # foreign keys
-    company = models.ForeignKey(Company, related_name='projects', on_delete=models.CASCADE, null=True)
+    projects = models.ManyToManyField(Project)
 
     def __str__(self):
         return str(self.name)

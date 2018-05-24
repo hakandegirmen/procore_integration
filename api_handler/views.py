@@ -176,9 +176,11 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
 @api_view(['get','post'])
 def webhook(request):
-    return Response('test_ok', status=status.HTTP_200_OK)
+    print(request)
     data = request.data
-    print()
+    print(data)
+    return Response('test_ok', status=status.HTTP_200_OK)
+
 
 
 
