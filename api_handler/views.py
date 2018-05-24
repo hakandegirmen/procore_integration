@@ -4,7 +4,7 @@ from api_handler.utils import *
 
 from rest_framework import viewsets
 from rest_framework.generics import get_object_or_404
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view
 
 from api_handler.models import PlatformUser, Project, Company
 from api_handler.serializers import PlatformUserSerializer, ProjectSerializer, CompanySerializer
@@ -174,9 +174,9 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
 
 
-@action(detail=True, methods=['post','get'])
+@api_view(['get','post'])
 def webhook(request):
-    return Response(status=status.HTTP_200_OK)
+    return Response('test_ok', status=status.HTTP_200_OK)
     data = request.data
     print()
 
