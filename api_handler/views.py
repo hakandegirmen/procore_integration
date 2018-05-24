@@ -6,10 +6,13 @@ from rest_framework import viewsets
 from rest_framework.generics import get_object_or_404
 from rest_framework.decorators import action, api_view
 
-from api_handler.models import PlatformUser, Project, Company
+from api_handler.models import PlatformUser, Project, Company, Report
 from api_handler.serializers import PlatformUserSerializer, ProjectSerializer, CompanySerializer
 
+import json
+
 procore = Procore()
+cloud = Cloud
 
 
 class PlatformUserViewSet(viewsets.ModelViewSet):
@@ -39,14 +42,13 @@ class PlatformUserViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['get'])
     def get_procore_companies(self, request, uuid):
-        user = self.get_user_with_valid_token(uuid)
+        user = self.get_user_with_valid_token(uuid=uuid)
 
         return Response(procore.get_companies(user), status=status.HTTP_200_OK, content_type='application/json')
 
-
     @action(detail=True, methods=['get'])
     def get_procore_projects(self, request, uuid):
-        user = self.get_user_with_valid_token(uuid)
+        user = self.get_user_with_valid_token(uuid=uuid)
 
         try:
             return Response(procore.get_projects(user), status=status.HTTP_200_OK, content_type='application/json')
@@ -93,12 +95,14 @@ class PlatformUserViewSet(viewsets.ModelViewSet):
                 return Response('A company has not been linked to this user yet', status=status.HTTP_400_BAD_REQUEST)
             for project in projects:
                 try:
-                    Project.objects.get(uuid=project['project_uuid'])
+                    project = Project.objects.get(uuid=project['project_uuid'])
+                    user.projects.add(project)
                 except Project.DoesNotExist:
-                    Project.objects.create(uuid=project['project_uuid'],
-                                           name=project['project_name'],
-                                           procore_project_id=project['procore_project_id'],
-                                           company=company)
+                    project = Project.objects.create(uuid=project['project_uuid'],
+                                                     name=project['project_name'],
+                                                     procore_project_id=project['procore_project_id'],
+                                                     company=company)
+                    user.projects.add(project)
 
             return Response('Projects successfully created and linked', status=status.HTTP_200_OK)
 
@@ -133,17 +137,20 @@ class PlatformUserViewSet(viewsets.ModelViewSet):
         return
 
     @staticmethod
-    def get_user_with_valid_token(uuid):
+    def get_user_with_valid_token(uuid=None, procore_id=None):
         try:
-            user = PlatformUser.objects.get(uuid=uuid)
+            if procore_id is not None:
+                user = PlatformUser.objects.get(procore_id=procore_id)
+            else:
+                user = PlatformUser.objects.get(uuid=uuid)
             if procore.access_token_expired(user):
                 token_data = procore.refresh_access_token(user)
-                __class__.create_or_update_user(uuid, token_data)
+                __class__.create_or_update_user(user.uuid, token_data)
                 user.refresh_from_db()
             return user
 
         except PlatformUser.DoesNotExist:
-            return HttpResponseRedirect(redirect_to=procore.get_authorization_url(uuid))
+            return Response('User does not exist', status=status.HTTP_400_BAD_REQUEST)
 
 
 class CompanyViewSet(viewsets.ModelViewSet):
@@ -166,49 +173,67 @@ class ProjectViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['get'])
     def get_procore_project(self, request, uuid):
         user_uuid = request.query_params['user_uuid']
-        user = PlatformUserViewSet.get_user_with_valid_token(user_uuid)
+        user = PlatformUserViewSet.get_user_with_valid_token(uuid=user_uuid)
         project = self.get_object()
         procore.get_project(user, project)
         return Response(procore.get_project(user, project), status=status.HTTP_200_OK, content_type='application/json')
 
+    # TODO: Is not tests yet
+    @action(detail=True, methods=['get'])
+    def request_sensor_reports(self, request):
+        # request must include user_procore_id and project_procore_id as query parameters
+        # find user and project in db
+        user_procore_id = request.query_params['user_procore_id']
+        user = PlatformUserViewSet.get_user_with_valid_token(procore_id=user_procore_id)
+
+        project_procore_id = request.query_params['project_procore_id']
+        try:
+            project = Project.objects.get(procore_project_id=project_procore_id)
+        except Project.DoesNotExist:
+            return Response('Project is not linked', status=status.HTTP_400_BAD_REQUEST)
+
+        # get project reports from cloud
+        reports = cloud.get_sensor_reports(project)
+
+        # send reports to procore as links
+        for report in reports:
+            report_link = {
+                'link': {
+                    'title': report['section_name'] + "_" + report['sensor_name'],
+                    'url': report['url']
+                }
+            }
+            link_response = procore.create_link(project, user, json.dumps(report_link))
+
+            # save report data to db
+            link_procore_id = link_response['id']
+            link_url = link_response['url']
+            sensor_uuid = report['sensor_uuid']
+
+            report, created = Report.objects.get_or_create(procore_id=link_procore_id,
+                                                           sensor_uuid=sensor_uuid,
+                                                           url=link_url,
+                                                           project=project)
+
+            if created:
+                pass
+            else:
+                report.url = link_url
+                report.save()
+
+        return Response('OK', status=status.HTTP_200_OK)
+
+    def update_report(self):
+        # TODO
+        NotImplemented()
 
 
-
-@api_view(['get','post'])
+@api_view(['get', 'post'])
 def webhook(request):
+    # TODO: project user update webhook
+    # TODO: company user update webhook
+    # TODO: project active
     print(request)
     data = request.data
     print(data)
     return Response('test_ok', status=status.HTTP_200_OK)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -53,7 +53,7 @@
     <favorites_list name="procore_integration" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.52146816">
+    <splitter split-orientation="horizontal" split-proportion="0.57132965">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
@@ -80,8 +80,8 @@
           <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/api_handler/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="598">
-                  <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+                <state relative-caret-position="517">
+                  <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
                 </state>
               </provider>
             </entry>
@@ -101,8 +101,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api_handler/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="180" column="14" selection-start-line="180" selection-start-column="14" selection-end-line="180" selection-end-column="14" />
+                <state relative-caret-position="848">
+                  <caret line="234" column="26" selection-start-line="234" selection-start-column="26" selection-end-line="234" selection-end-column="26" />
                   <folding>
                     <element signature="e#0#58#0" expanded="true" />
                   </folding>
@@ -117,8 +117,8 @@
           <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api_handler/utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="124">
-                  <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+                <state relative-caret-position="464">
+                  <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                   </folding>
@@ -175,6 +175,7 @@
       <find>mysite</find>
       <find>settings</find>
       <find>log</find>
+      <find>get_user_with_valid_token</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,7 +197,6 @@
         <option value="$PROJECT_DIR$/Pipfile" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/api_handler/urls.py" />
-        <option value="$PROJECT_DIR$/api_handler/utils.py" />
         <option value="$PROJECT_DIR$/mysite_nginx.conf" />
         <option value="$PROJECT_DIR$/stop.sh" />
         <option value="$PROJECT_DIR$/deploy.sh" />
@@ -205,6 +205,7 @@
         <option value="$PROJECT_DIR$/procore_integration/settings.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/api_handler/models.py" />
+        <option value="$PROJECT_DIR$/api_handler/utils.py" />
         <option value="$PROJECT_DIR$/api_handler/views.py" />
       </list>
     </option>
@@ -354,11 +355,11 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.25729167" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" weight="0.26666668" />
       <window_info anchor="bottom" id="Python Console" weight="0.309375" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.7694356" visible="true" weight="0.265625" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.7694356" visible="true" weight="0.27708334" />
       <window_info anchor="bottom" id="Database Console" sideWeight="0.49946752" weight="0.190625" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.77059776" visible="true" weight="0.12726304" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77059776" visible="true" weight="0.12726304" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" visible="true" weight="0.10383387" />
+      <window_info anchor="right" id="Database" weight="0.10383387" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
       <window_info anchor="right" id="SciView" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -442,22 +443,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/api_handler/views.py</url>
-          <line>54</line>
+          <line>56</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/api_handler/views.py</url>
-          <line>171</line>
+          <line>178</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/api_handler/utils.py</url>
-          <line>119</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/api_handler/views.py</url>
-          <line>181</line>
+          <line>238</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
@@ -808,29 +804,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api_handler/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api_handler/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        <state relative-caret-position="517">
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api_handler/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="180" column="14" selection-start-line="180" selection-start-column="14" selection-end-line="180" selection-end-column="14" />
+        <state relative-caret-position="848">
+          <caret line="234" column="26" selection-start-line="234" selection-start-column="26" selection-end-line="234" selection-end-column="26" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api_handler/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

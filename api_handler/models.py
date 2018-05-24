@@ -13,10 +13,8 @@ class Company(models.Model):
     # procore properties
     procore_company_id = models.CharField(max_length=20, null=True)
 
-
     def __str__(self):
         return str(self.name)
-
 
 
 class Project(models.Model):
@@ -58,3 +56,15 @@ class PlatformUser(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class Report(models.Model):
+    class Meta:
+        verbose_name_plural = 'Reports'
+
+    procore_id = models.CharField(max_length=20, null=True)
+    sensor_uuid = models.UUIDField(null=True)
+    url = models.URLField(null=True)
+
+    # foreign keys
+    project = models.ForeignKey(Project, related_name='reports', on_delete=models.CASCADE, null=True)

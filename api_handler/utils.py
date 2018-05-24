@@ -131,3 +131,33 @@ class Procore:
             return True
 
         return False
+
+    def create_link(self, project, user, link_json):
+        path = '/vapid/links?project_id' + project.procore_project_id
+        url = self.base_url + path
+        headers = {'Authorization': 'Bearer ' + user.access_token,
+                   'content-type': 'application/json'}
+
+        response = requests.post(url,
+                                 headers=headers,
+                                 json=link_json)
+
+        return json.loads(str(response.content, 'utf-8'))
+
+
+class Cloud:
+    # TODO: Implement authorization?
+
+    base_url = 'https://dev-cloud.giatecscientific.com/auth/login?redirect=%2Fdashboard'
+
+    def get_sensor_reports(self, project):
+        # TODO: no api endpoint on cloud side yet
+        # Response should contain section_name, sensor_name, sensor_uuid and report_url
+
+        path = '//' + project.uuid
+        url = self.base_url + path
+        headers = {''}
+
+        response = requests.get(url,
+                                headers=headers)
+        return json.loads(str(response.content, 'utf-8'))
