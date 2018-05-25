@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf6be506-ed1f-44b7-ae0f-db8409e1d09e" name="Default" comment="progress backup" />
+    <list default="true" id="cf6be506-ed1f-44b7-ae0f-db8409e1d09e" name="Default" comment="progress backup">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,8 +105,8 @@
           <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api_handler/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="848">
-                  <caret line="234" column="26" selection-start-line="234" selection-start-column="26" selection-end-line="234" selection-end-column="26" />
+                <state relative-caret-position="-1791">
+                  <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
                   <folding>
                     <element signature="e#0#58#0" expanded="true" />
                   </folding>
@@ -114,11 +118,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/api_handler/utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="464">
-                  <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+                <state relative-caret-position="273">
+                  <caret line="114" column="40" lean-forward="true" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                   </folding>
@@ -144,11 +148,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="603">
-                  <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+                <state relative-caret-position="390">
+                  <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
                 </state>
               </provider>
             </entry>
@@ -203,10 +207,10 @@
         <option value="$PROJECT_DIR$/procore_integration_nginx.conf" />
         <option value="$PROJECT_DIR$/procore_integration_uwsgi.ini" />
         <option value="$PROJECT_DIR$/procore_integration/settings.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/api_handler/models.py" />
         <option value="$PROJECT_DIR$/api_handler/utils.py" />
         <option value="$PROJECT_DIR$/api_handler/views.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -242,16 +246,6 @@
               <item name="procore_integration" type="b2602c69:ProjectViewProjectNode" />
               <item name="procore_integration" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="procore_integration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="procore_integration" type="462c0819:PsiDirectoryNode" />
-              <item name="api_handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="procore_integration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="procore_integration" type="462c0819:PsiDirectoryNode" />
-              <item name="procore_integration" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -263,7 +257,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.CVS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -342,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526676550704</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="progress backup">
+      <created>1527195043286</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1527195043286</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -353,11 +354,11 @@
       <window_info anchor="bottom" id="Event Log" sideWeight="0.413738" side_tool="true" weight="0.27916667" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.25729167" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" weight="0.26666668" />
+      <window_info anchor="bottom" id="Version Control" weight="0.26666668" />
       <window_info anchor="bottom" id="Python Console" weight="0.309375" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.7694356" visible="true" weight="0.27708334" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.7694356" visible="true" weight="0.27708334" />
       <window_info anchor="bottom" id="Database Console" sideWeight="0.49946752" weight="0.190625" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77059776" visible="true" weight="0.12726304" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.77059776" visible="true" weight="0.12726304" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" weight="0.10383387" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32916668" />
@@ -783,13 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.local/share/virtualenvs/procore_integration-G0b8YUmV/lib/python3.6/site-packages/django/db/models/query.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
@@ -813,8 +807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api_handler/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="848">
-          <caret line="234" column="26" selection-start-line="234" selection-start-column="26" selection-end-line="234" selection-end-column="26" />
+        <state relative-caret-position="-1791">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
@@ -823,11 +817,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api_handler/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+        <state relative-caret-position="273">
+          <caret line="114" column="40" lean-forward="true" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
